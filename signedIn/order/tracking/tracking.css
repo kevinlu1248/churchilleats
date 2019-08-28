@@ -1,0 +1,57 @@
+#info-link {
+    color: #0000ff;
+}
+
+#info-link:hover {
+    text-decoration: underline;
+}
+
+#unaccepted-spinner-container {
+    text-align: center;
+    padding-top: 150px;
+    height: 340px;
+}
+
+#orderID {
+    font-size: 120px;
+    /* top: 50%; */
+    height: 300px;
+    vertical-align: middle;
+    margin: 0;
+    padding-top: 100px;
+}
+
+#order-table {
+    background-color: white;
+    border-color: black;
+    border-radius: 5%;
+}
+
+#order-table * {
+    border-color: grey;
+}
+
+#order-table-head {
+    border-radius: 50%;
+}
+
+#last-row {
+    border-top-width: thick;
+}
+
+#tracking-footer {
+    height: 70px;
+}
+
+#tracking-footer button {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+/* #tracking-footer a{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    vertical-align: middle;
+} */

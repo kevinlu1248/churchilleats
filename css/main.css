@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("http://www.yoursite.com/fonts/Avenir_Next.otf");
+    /* File to be stored at your site */
+}
+
+/*
+Color Palette
+#6e7f80	(110,127,128)
+#536872	(83,104,114)
+#708090	(112,128,144)
+#536878	(83,104,120)
+#36454f	(54,69,79)
+https://www.color-hex.com/color-palette/1407
+*/
+/** {
+    font: "Avenir Next" !important;
+}*/
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    /*background-color: #a1c4fd;*/
+    background-color: transparent;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0;
+}
+
+#nav {
+    /*background-color: #689bed !important;*/
+    background-color: #504343dd;
+    /* brownish */
+    height: 12vh;
+    padding-top: 5px;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+#navbarNav {
+    background-color: #504343dd;
+    height: 88vh;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    /*height: 100%;
+    width: 100%;
+    top: 100px;
+    position: fixed; */
+}
+
+/*nav items*/
+#navbarNavList {
+    text-align: left;
+    margin: 0;
+    line-height: 10vh;
+}
+
+.nav-item {
+    border: none
+}
+
+.nav-link {
+    color: #f8f9fa;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+#nav button.btn, #nav a.btn {
+    border: none;
+    color: #f8f9fa;
+}
+
+#btn-holders h2 {
+    line-height: 1.5rem;
+    font-size: 0.5rem;
+}
+
+ul {
+    margin-top: 60px;
+    width: 100%;
+    line-height: 90px;
+    font-size: 50px;
+}
+
+ul li {
+    border-bottom: 5px solid #343a40;
+}
+
+ul li:last-child {
+    border: none;
+}
+
+#logo {
+    width: 130px;
+}
+
+#header-title {
+    font-size: 35px;
+    margin-top: 0;
+}
+
+#header-buttons {
+    height: 5rem;
+    /* vertical-align: middle; */
+}
+
+#main {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#entry {
+    height: 700px;
+    margin: 0;
+    padding: 2rem !important;
+    /*opacity: 0.5;*/
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/churchilleats/assets/homepage.jpg"); */
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+}
+
+#title {
+    margin-top: 11em;
+}
+
+#signup-up-now {
+    text-align: left;
+    font-size: 3rem !important;
+    margin-bottom: 1rem;
+}
+
+#signups a {
+    color: white !important;
+    margin-top: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 300px;
+    vertical-align: baseline !important;
+    font-size: 26px;
+}
+
+.signup-col {
+    float: middle;
+    /*margin-top: 3em;*/
+    padding: 0;
+    height: 500px;
+}
+
+#signup {
+    padding: 0;
+}
+
+#submit {
+    height: 50px;
+    width: 100%;
+}
+
+#user:hover {
+    text-decoration: none;
+}
+
+#user {
+    /*line-height: 1;*/
+    /*margin-right: 10px;*/
+    white-space: nowrap;
+    /*padding-top: 10px;*/
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+#logout:hover {
+    text-decoration: none;
+}
+
+#logout {
+    line-height: inherit;
+    font-size: 14px;
+}
+
+.alert {
+    margin: 0;
+}
+
+#signup-holder p {
+    display: none;
+}
+
+#binder {
+    pointer-events: none;
+}
+
+#signup-container {
+    /*background-color: rgba(0, 0, 0, 0.4);*/
+    margin-top: 20vh;
+    padding-top: 15px;
+}
+
+#signup-email {
+    /*height: 35px;*/
+    /*width: 220px;*/
+    /*border-radius: 7px;*/
+    /*float: left;*/
+}
+
+#signup-email-container {
+    flex: 2;
+}
+
+#login-info-text {
+    font-size: 24px;
+    margin-top: -15px;
+}
+
+{
+    margin-bottom: 1rem
+;
+}
+
+#login-row {
+    margin-top: 3rem;
+    padding: 1rem;
+    height: 350px;
+    padding-top: 0;
+}
+
+#signup-row-container {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 650px;
+}
+
+#instructions-unhider {
+    color: blue !important;
+    cursor: pointer;
+}
+
+.button-menu {
+    font-size: 1.5rem;
+}
+
+#collapsing-button {
+    width: 3rem;
+    height: 3rem;
+    border-color: #343a40;
+    color: #343a40;
+    align: center;
+    font-size: 30px;
+}

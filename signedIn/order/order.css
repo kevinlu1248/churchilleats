@@ -1,0 +1,188 @@
+/*#food-cards-container > div .card-header {*/
+/*    padding: 0 !important;*/
+/*    margin: 0 !important;*/
+/*}*/
+
+/*#food-cards-container > div .card-header button {*/
+/*    width: 100%;*/
+/*    height: 3.5rem;*/
+/*    padding: 20px !important;*/
+/*}*/
+
+/*#food-cards-container {*/
+/*    width: 100%;*/
+/*}*/
+
+/*#food-cards-container > div {*/
+/*    border-radius: 3% !important;*/
+/*    border: 1px solid #6c757d !important;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+/*.card-body{*/
+/*    height: 100%;*/
+/*    padding-top: 35px;*/
+/*    padding-right: 0;*/
+/*    font-size: 36px;*/
+/*}*/
+
+/*.card-body:before {*/
+/*    color: #6c757d;*/
+/*    content: '$';*/
+/*    font-size: 20px;*/
+/*    vertical-align: top;*/
+/*}*/
+
+/*.food-card-image{*/
+/*    height: 100px;*/
+/*    max-width: 150px;*/
+/*    border-radius: 10%;*/
+/*    margin: 1rem;*/
+/*    border: 1px solid #6c757d !important;*/
+/*}*/
+
+/*#food-cards-container > div .card-header button div input {*/
+/*    width: 30px;*/
+/*    !* background-color: none !important; *!*/
+/*    background-color: rgba(0, 0, 0, 0) !important;*/
+/*    border: none;*/
+/*    color: inherit;*/
+/*}*/
+
+/*.food-counter-buttons {*/
+/*    text-align: center;*/
+/*    font-size: 50px;*/
+/*    padding-top: 20px;*/
+/*}*/
+
+/*#food-cards-container > #food-spinner {*/
+/*    border-radius: 50% !important;*/
+/*    text-align: center;*/
+/*}*/
+
+/*#food-cards-container > #food-spinner-container {*/
+/*    border: none !important;*/
+/*}*/
+
+/*.max-food-warning {*/
+/*    font-size: 12px;*/
+/*}*/
+
+/*!* footer *!*/
+/*#ordering-footer {*/
+/*    height: 100px;*/
+/*    box-shadow: 0 -1px 20px black;*/
+/*    padding-top: 5px;*/
+/*    !* color: none; *!*/
+/*}*/
+
+/*#ordering-footer > .row {*/
+/*    margin: 0;*/
+/*}*/
+
+/*#total-cost {*/
+/*    background-color: transparent;*/
+/*    border: none;*/
+/*    !* width: 100%; *!*/
+/*    height: 100%;*/
+/*}*/
+
+/*#total-cost-holder {*/
+/*    padding: 0;*/
+/*    vertical-align: text-top;*/
+/*}*/
+
+/*#dollar-sign {*/
+/*    padding-top: 5px;*/
+/*    font-size: 24px;*/
+/*    vertical-align: text-top;*/
+/*    color: #6c757d;*/
+/*}*/
+
+/*#order-now-button-container {*/
+/*    vertical-align: middle !important;*/
+/*    padding: 0;*/
+/*    padding-top: 30px;*/
+/*    padding-right: 10px;*/
+/*    text-align: right;*/
+/*}*/
+
+/*#order-now-button {*/
+/*    background-color: transparent;*/
+/*    border: none;*/
+/*}*/
+
+#food-cards-container {
+    height: auto;
+    background-color: #504343dd;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.food-item {
+    border-bottom: 1px solid #333;
+    padding: 1.5rem;
+}
+
+.food-image {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    align-self: center;
+    border: 1px solid #333;
+}
+
+button.collapsable[aria-expanded="true"] {
+    background-color:
+}
+
+.food-name {
+    font-size: 0.75rem;
+}
+
+.plus {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    color: #504343dd;
+    text-align: center;
+}
+
+.plus:disabled {
+    background-color: darkgrey;
+    border: darkgrey;
+}
+
+.minus {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    text-align: center;
+}
+
+.minus:disabled {
+    color: darkgrey;
+    border-color: darkgrey;
+}
+
+.header-form-buttons {
+    width: 6rem;
+    height: 2.2rem !important;
+}
+
+#collapsing-button, .header-form-buttons {
+    border: none;
+    color: #f8f9fa;
+}
+
+#instructions-unhider-container {
+    text-align: justify;
+    width: 100%;
+    padding: 1rem;
+}
+
+.quantity {
+    font-size: 2rem;
+}

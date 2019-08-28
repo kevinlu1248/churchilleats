@@ -1,0 +1,29 @@
+#room-number-container {
+    padding-left: 0;
+}
+
+#described-location-container {
+    padding: 0;
+}
+
+#submit-location {
+    width: 100%;
+}
+
+#order-table {
+    background-color: white;
+    border-color: black;
+    border-radius: 5%;
+}
+
+#order-table * {
+    border-color: grey;
+}
+
+#order-table-head {
+    border-radius: 50%;
+}
+
+#last-row {
+    border-top-width: thick;
+}

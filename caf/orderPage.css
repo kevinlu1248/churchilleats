@@ -1,0 +1,22 @@
+body {
+    background-color: #343a40;
+}
+
+#exit-button {
+}
+
+.last-row {
+    margin-bottom: 50px;
+}
+
+tr {
+    height: 2rem;
+}
+
+#header-container {
+    height: 40px;
+    margin: 10px;
+}
+
+#frequency-btn {
+}
