@@ -119,6 +119,7 @@ $(document).ready(function () {
                 `;
             // console.log(cardTemplate)
 
+            
             $(cardTemplate).insertBefore("#instructions-unhider-container");
             // console.log(cardTemplate);
         });
