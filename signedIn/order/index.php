@@ -50,7 +50,7 @@
     Please make your order below by tapping the desired food and choosing how much you want.
 </h7> -->
 
-<div class="container mb-3 text-light" id="food-cards-container">
+<div class="container mb-3 text-light overflow-hidden" id="food-cards-container">
     <div id="food-spinner-container" class="row food-item">
         <div class="col-12 text-center">
             <div class="spinner-border" role="status">
@@ -97,14 +97,14 @@
 <!--</footer>-->
 
 <!-- footer for ordering -->
-<footer id="ordering-footer" class="alert alert-primary fixed-bottom text-black" role="alert" style="display: none;">
-    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST" class="inline-form d-flex">
-        <input id="order" name="order" hidden>
-        <div class="align-self-center text-center">
-            <button id="order-now-button" type="submit" class="align-middle">
-                Checkout
-            </button>
-        </div>
+<footer id="ordering-footer" class="fixed-bottom text-black" role="alert" style="display: none;">
+    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST"
+          class="d-flex justify-content-center">
+        <input type="text" id="order" name="order" hidden>
+        <button id="order-now-button" type="submit" class="align-middle align-self-center text-center">
+            <i class="fas fa-shopping-cart"></i>&nbsp;Checkout
+        </button>
+
         <div class="row" hidden>
             <div class="col-1" id="dollar-sign">
                 $

@@ -50,6 +50,8 @@ session_start();
     <!-- <script src="https://raw.githubusercontent.com/jeromeetienne/jquery-qrcode/master/jquery.qrcode.min.js"></script> -->
     <!--Toast css-->
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <!-- AnimateCSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>

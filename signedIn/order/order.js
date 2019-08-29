@@ -86,40 +86,37 @@ $(document).ready(function () {
             // `; // from cardTemplate.html
 
             var cardTemplate = `
-                    <div id="${id}-card" class="row food-item">
-                        <div class="col-3 d-flex">
+                    <div id="${id}-card" class="row food-item mx-0 px-3">
+                        <div class="col-2 d-flex px-0 overflow-auto">
                             <img src="${image}" alt="" class="food-image" align="middle">
                         </div>
-                        <div class="col-3 text-left d-flex">
+                        <div class="col-6 text-left d-flex pr-0 pl-3">
                             <div class="align-self-center food-name">
                                 ${name}</br>
                                 $${cost}
                             </div>
                         </div>
-                        </div>
-                        <div class="col-4 d-flex">
-                            <div class="d-flex align-self-center text-center">
+                        <div class="col-4 d-flex px-0 justify-content-between">
+<!--                                <div class="align-self-center mr-1">&times;</div>-->
+                            <div id="${id}-hider" class="hider justify-content-between flex-2 mr-2 animated" style="display: none;">
+                                <div class="display-4 quantity d-flex">
+                                     <div class="d-flex align-self-center">
+                                         <div id="${id}-counter" type="number" class="counter" cost="${cost}" ${max}>0</div>
+                                     </div>
+                                </div>
                                 <div class="align-self-center">
                                     <button id="${id}-minus" class="minus counter-buttons btn btn-outline-light" for="${id}" disabled><i class="fas fa-minus"></i></button>
                                 </div>
-                                <button id="${id}-plus" class="plus counter-buttons btn btn-light mr-2" for="${id}"><i class="fas fa-plus"></i></button>
                             </div>
-                        </div>
-                        <div class="col-2 text-left d-flex">
-                            <div class="align-self-center food-name d-flex">
-                                <div class="align-self-center mr-1">&times;</div>
-                                <div class="display-4 quantity d-flex">
-                                    <div class="d-flex align-self-center">
-                                        <input id="${id}-counter" type="number" class="counter" value="0" cost="${cost}" ${max} disabled>
-</div>
-                                </div>
+                            <div class="d-flex align-self-center ml-auto">
+                                <button id="${id}-plus" class="plus counter-buttons btn btn-light" for="${id}"><i class="fas fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
                 `;
-            // console.log(cardTemplate)
+            console.log(cardTemplate)
 
-            
+
             $(cardTemplate).insertBefore("#instructions-unhider-container");
             // console.log(cardTemplate);
         });
@@ -172,13 +169,13 @@ $(document).ready(function () {
                 const targetCounter = $("#" + targetFood + "-counter");
                 const foodCost = targetCounter.attr("cost"); // cost of the food
                 const targetCost = $("#" + targetFood + "-cost");
-                var value = parseInt(targetCounter.val());
+                var value = parseInt(targetCounter.html());
 
                 if (doAdd) {
-                    targetCounter.val(value + 1);
+                    targetCounter.html(value + 1);
                     value++;
                 } else {
-                    targetCounter.val(value - 1);
+                    targetCounter.html(value - 1);
                     value--;
                 }
 
@@ -191,16 +188,30 @@ $(document).ready(function () {
                 const maxFoodWarning = $("#" + targetFood + "-max-warning");
                 const maxCount = targetCounter.attr("max");
 
-                if (targetCounter.val() <= 0) {
+
+                if (targetCounter.html() <= 0 && !doAdd) {
+                    // slide out
+                    console.log('leaving');
+                    $(`#${targetFood}-hider`).fadeOut('fast');
+                }
+                if (targetCounter.html() == 1 && doAdd) {
+                    // slide in
+                    $(`#${targetFood}-hider`).fadeIn('fast');
+
+                }
+
+                if (targetCounter.html() <= 0) {
                     // deactivates subtract button
+
                     subtractButton.attr("disabled", true);
                 } else {
                     //activates subtract button
+                    $(`#${targetFood}-hider`).animate({width: "toggle"}, 350);
                     subtractButton.attr("disabled", false);
                 }
 
                 if (maxCount > 0) {
-                    if (targetCounter.val() >= maxCount) {
+                    if (targetCounter.html() >= maxCount) {
                         addButton.attr("disabled", true);
                         maxFoodWarning.attr("hidden", false);
 
@@ -216,12 +227,12 @@ $(document).ready(function () {
                 foods.forEach(function (food) {
                     const id = food.id;
                     const cost = parseFloat($("#" + id + "-counter").attr("cost"));
-                    var count = parseInt($("#" + id + "-counter").val());
+                    var count = parseInt($("#" + id + "-counter").html());
                     totalCost += cost * count;
-                    console.log(cost);
+                    // console.log(cost);
 
                     if (cost) {
-                        var count = $("#" + id + "-counter").val();
+                        var count = $("#" + id + "-counter").html();
                         var foodObject = {
                             "id": id,
                             "name": food["name"],
