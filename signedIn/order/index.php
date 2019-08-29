@@ -51,6 +51,13 @@
 </h7> -->
 
 <div class="container mb-3 text-light" id="food-cards-container">
+    <div id="food-spinner-container" class="row food-item">
+        <div class="col-12 text-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
     <div id="instructions-unhider-container">
         <small class="text-muted">Confused about how to order? Load the instructions
             <a
@@ -68,10 +75,37 @@
 
 
 <!-- footer for ordering -->
+<!--<footer id="ordering-footer" class="alert alert-primary fixed-bottom text-black" role="alert" style="display: none;">-->
+<!--    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST">-->
+<!--        <input id="order" name="order" hidden>-->
+<!--        <div class="row">-->
+<!--            <div class="col-1" id="dollar-sign">-->
+<!--                $-->
+<!--            </div>-->
+<!--            <div class="col-6" id="total-cost-holder">-->
+<!--                <input id="total-cost" class="display-3" value="0.00" name="totalCost" readonly>-->
+<!--            </div>-->
+<!--            <div id="order-now-button-container" class="col-5">-->
+<!--                <button id="order-now-button" type="submit" class="align-middle">-->
+<!--                    <h5>-->
+<!--                        Order now >>-->
+<!--                    </h5>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</footer>-->
+
+<!-- footer for ordering -->
 <footer id="ordering-footer" class="alert alert-primary fixed-bottom text-black" role="alert" style="display: none;">
-    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST">
+    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST" class="inline-form d-flex">
         <input id="order" name="order" hidden>
-        <div class="row">
+        <div class="align-self-center text-center">
+            <button id="order-now-button" type="submit" class="align-middle">
+                Checkout
+            </button>
+        </div>
+        <div class="row" hidden>
             <div class="col-1" id="dollar-sign">
                 $
             </div>
@@ -79,11 +113,6 @@
                 <input id="total-cost" class="display-3" value="0.00" name="totalCost" readonly>
             </div>
             <div id="order-now-button-container" class="col-5">
-                <button id="order-now-button" type="submit" class="align-middle">
-                    <h5>
-                        Order now >>
-                    </h5>
-                </button>
             </div>
         </div>
     </form>

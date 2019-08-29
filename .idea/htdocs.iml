@@ -9,5 +9,6 @@
     <orderEntry type="library" name="bubbly-bg" level="application" />
     <orderEntry type="library" name="popper" level="application" />
     <orderEntry type="library" name="bootstrap.bundle" level="application" />
+    <orderEntry type="library" name="jquery-3.4.0" level="application" />
   </component>
 </module>

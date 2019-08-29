@@ -56,7 +56,6 @@ $(document).ready(function () {
         shadowColor: "#ddd",
         bubbles: 10
     });
-    console.log('test');
 
     // Password viewing
     $('input[type="password"]').addClass('password');

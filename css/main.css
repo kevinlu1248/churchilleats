@@ -74,15 +74,11 @@ body {
     padding: 0;
 }
 
-#nav button.btn, #nav a.btn {
+#nav a.btn {
     border: none;
     color: #f8f9fa;
 }
 
-#btn-holders h2 {
-    line-height: 1.5rem;
-    font-size: 0.5rem;
-}
 
 ul {
     margin-top: 60px;
@@ -177,22 +173,8 @@ ul li:last-child {
     text-decoration: none;
 }
 
-#user {
-    /*line-height: 1;*/
-    /*margin-right: 10px;*/
-    white-space: nowrap;
-    /*padding-top: 10px;*/
-    font-size: 14px;
-    margin-bottom: 0;
-}
-
 #logout:hover {
     text-decoration: none;
-}
-
-#logout {
-    line-height: inherit;
-    font-size: 14px;
 }
 
 .alert {
@@ -254,15 +236,17 @@ ul li:last-child {
     cursor: pointer;
 }
 
-.button-menu {
-    font-size: 1.5rem;
+.button-menu a.btn {
+    font-size: 1rem;
+    line-height: 1rem;
 }
 
 #collapsing-button {
     width: 3rem;
     height: 3rem;
-    border-color: #343a40;
-    color: #343a40;
+    /*border-color: #343a40;*/
+    border: none;
+    color: #f8f9fa;
     align: center;
     font-size: 30px;
 }

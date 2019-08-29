@@ -96,19 +96,22 @@ $(document).ready(function () {
                                 $${cost}
                             </div>
                         </div>
-                        <div class="col-2 text-left d-flex">
-                            <div class="align-self-center food-name d-flex">
-                                <div class="align-self-center mr-1">&times;</div>
-                                <div class="display-4 quantity">
-                                    0
-                                </div>
-                            </div>
                         </div>
                         <div class="col-4 d-flex">
                             <div class="d-flex align-self-center text-center">
-                                <button class="plus btn btn-light mr-2"><i class="fas fa-plus"></i></button>
                                 <div class="align-self-center">
-                                    <button class="minus btn btn-outline-light" disabled><i class="fas fa-minus"></i></button>
+                                    <button id="${id}-minus" class="minus counter-buttons btn btn-outline-light" for="${id}" disabled><i class="fas fa-minus"></i></button>
+                                </div>
+                                <button id="${id}-plus" class="plus counter-buttons btn btn-light mr-2" for="${id}"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-2 text-left d-flex">
+                            <div class="align-self-center food-name d-flex">
+                                <div class="align-self-center mr-1">&times;</div>
+                                <div class="display-4 quantity d-flex">
+                                    <div class="d-flex align-self-center">
+                                        <input id="${id}-counter" type="number" class="counter" value="0" cost="${cost}" ${max} disabled>
+</div>
                                 </div>
                             </div>
                         </div>
@@ -129,64 +132,63 @@ $(document).ready(function () {
         })
         .done(function () {
             // adding images
-            $("img").each(function () {
-                // console.log($(this).attr("src"));
-                if (!$(this).attr("src")) {
-                    var imageOf = $(this).attr("imageOf");
-                    var imageID = $(this).attr("id");
-                    // console.log(imageOf.toLowerCase());
-
-                    //get image ajax call
-                    var pixabayAPI = "https://pixabay.com/api/";
-
-                    $.ajax(pixabayAPI, {
-                        method: "GET",
-                        dataType: "json",
-                        data: {
-                            key: "12385886-e50ba07b2c9bf55ce5c73dae2",
-                            q: imageOf.toLowerCase(),
-                            category: "food"
-                        },
-                        success: function (result, status, jqXHR) {
-                            var images = result.hits;
-                            if (images.length > 0) {
-                                $("#" + imageID).attr("src", images[0].webformatURL);
-                            }
-                            ;
-                        },
-                        error: function (e) {
-                            console.log(e);
-                        }
-                    });
-                }
-            });
+            // $("img").each(function () {
+            //     // console.log($(this).attr("src"));
+            //     if (!$(this).attr("src")) {
+            //         var imageOf = $(this).attr("imageOf");
+            //         var imageID = $(this).attr("id");
+            //         // console.log(imageOf.toLowerCase());
+            //
+            //         //get image ajax call
+            //         var pixabayAPI = "https://pixabay.com/api/";
+            //
+            //         $.ajax(pixabayAPI, {
+            //             method: "GET",
+            //             dataType: "json",
+            //             data: {
+            //                 key: "12385886-e50ba07b2c9bf55ce5c73dae2",
+            //                 q: imageOf.toLowerCase(),
+            //                 category: "food"
+            //             },
+            //             success: function (result, status, jqXHR) {
+            //                 var images = result.hits;
+            //                 if (images.length > 0) {
+            //                     $("#" + imageID).attr("src", images[0].webformatURL);
+            //                 }
+            //                 ;
+            //             },
+            //             error: function (e) {
+            //                 console.log(e);
+            //             }
+            //         });
+            //     }
+            // });
 
             // set event handler for button presses
             $(".counter-buttons").click(function () {
-                var doAdd = $(this).hasClass("plus");
-                var targetFood = $(this).attr("for");
-                var targetCounter = $("#" + targetFood + "-counter");
-                var foodCost = targetCounter.attr("cost"); // cost of the food
-                var targetCost = $("#" + targetFood + "-cost");
+                const doAdd = $(this).hasClass("plus");
+                const targetFood = $(this).attr("for");
+                const targetCounter = $("#" + targetFood + "-counter");
+                const foodCost = targetCounter.attr("cost"); // cost of the food
+                const targetCost = $("#" + targetFood + "-cost");
                 var value = parseInt(targetCounter.val());
 
                 if (doAdd) {
                     targetCounter.val(value + 1);
-                    // console.log(value);
+                    value++;
                 } else {
                     targetCounter.val(value - 1);
+                    value--;
                 }
 
-                // set value of total cost
-                var value = parseInt(targetCounter.val());
                 // value rounded to two decimal
                 targetCost.html(parseFloat(Math.round(value * foodCost * 100) / 100).toFixed(2));
 
                 //disabling buttons
-                var addButton = $("#" + targetFood + "-plus");
-                var subtractButton = $("#" + targetFood + "-minus");
-                var maxFoodWarning = $("#" + targetFood + "-max-warning");
-                var maxCount = targetCounter.attr("max");
+                const addButton = $("#" + targetFood + "-plus");
+                const subtractButton = $("#" + targetFood + "-minus");
+                const maxFoodWarning = $("#" + targetFood + "-max-warning");
+                const maxCount = targetCounter.attr("max");
 
                 if (targetCounter.val() <= 0) {
                     // deactivates subtract button
@@ -211,9 +213,11 @@ $(document).ready(function () {
                 var totalCost = 0;
                 var order = [];
                 foods.forEach(function (food) {
-                    var id = food["id"];
-                    var cost = parseFloat($("#" + id + "-cost").html());
-                    totalCost += cost;
+                    const id = food.id;
+                    const cost = parseFloat($("#" + id + "-counter").attr("cost"));
+                    var count = parseInt($("#" + id + "-counter").val());
+                    totalCost += cost * count;
+                    console.log(cost);
 
                     if (cost) {
                         var count = $("#" + id + "-counter").val();

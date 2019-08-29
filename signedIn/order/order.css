@@ -69,13 +69,6 @@
 /*}*/
 
 /*!* footer *!*/
-/*#ordering-footer {*/
-/*    height: 100px;*/
-/*    box-shadow: 0 -1px 20px black;*/
-/*    padding-top: 5px;*/
-/*    !* color: none; *!*/
-/*}*/
-
 /*#ordering-footer > .row {*/
 /*    margin: 0;*/
 /*}*/
@@ -107,10 +100,21 @@
 /*    text-align: right;*/
 /*}*/
 
-/*#order-now-button {*/
-/*    background-color: transparent;*/
-/*    border: none;*/
-/*}*/
+#ordering-footer {
+    height: 50vh;
+    box-shadow: 0 -1px 10px black;
+    /* color: none; */
+    background-color: #504343dd;
+    border: none;
+    display: flex;
+}
+
+#order-now-button {
+    background-color: transparent;
+    border: none;
+    align-self: center;
+    vertical-align: center;
+}
 
 #food-cards-container {
     height: auto;
@@ -132,6 +136,7 @@
     border-radius: 5px;
     align-self: center;
     border: 1px solid #333;
+    background-color: #333;
 }
 
 button.collapsable[aria-expanded="true"] {
@@ -183,6 +188,11 @@ button.collapsable[aria-expanded="true"] {
     padding: 1rem;
 }
 
-.quantity {
+.counter {
     font-size: 2rem;
+    color: #f8f9fa;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
 }
