@@ -34,11 +34,37 @@ tr {
 }
 
 #order-table td {
-    background-color: #23293099;
-    color: #bdb8ae;
+    background-color: #23262999;
+    color: #e3e9ea;
 }
 
 #order-table thead th {
     color: #f8f9fa;
     background-color: #343a4099;
+}
+
+.modal-content {
+    /*border-color: #f8f9fa;*/
+    background-color: #333d;
+}
+
+.modal-content *:not(button) {
+    border-color: #bdb8ae;
+}
+
+.modal-content .input-group-prepend, .modal-content .input-group-prepend button {
+    border-color: #bdb8ae;
+}
+
+.modal-content :not(.text-muted) {
+    color: #f8f9fa;
+}
+
+.dropdown-menu {
+    background-color: #333d;
+    border: none;
+}
+
+.dropdown-menu button:hover {
+    background-color: #6c757d;
 }

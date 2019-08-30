@@ -2,6 +2,8 @@
 include_once "../conn/query.php";
 include_once "sessioner.php";
 
+//TODO: autologin
+
 class Login extends Query
 {
     // user inputted password

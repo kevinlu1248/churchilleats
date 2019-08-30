@@ -104,7 +104,7 @@
     height: 12vh;
     box-shadow: 0 -1px 10px black;
     /* color: none; */
-    background-color: #504343dd;
+    background-color: #433c3cdd;
     border: none;
     padding: 0;
     display: flex;
@@ -154,9 +154,9 @@
     background-color: #333;
 }
 
-button.collapsable[aria-expanded="true"] {
-    background-color:
-}
+/*button.collapsable[aria-expanded="true"] {*/
+/*    background-color:*/
+/*}*/
 
 .food-name {
     font-size: 1rem;

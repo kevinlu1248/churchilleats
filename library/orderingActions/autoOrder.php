@@ -1,5 +1,7 @@
 <?php
 
+// TODO: fix all links to home dir
+
 require_once "../conn/query.php";
 require_once "nullUserOrderingID.php";
 session_start();

@@ -35,7 +35,7 @@ body {
 
 #nav {
     /*background-color: #689bed !important;*/
-    background-color: #504343dd;
+    background-color: #433c3cdd;
     /* brownish */
     height: 12vh;
     padding-top: 5px;
@@ -46,7 +46,7 @@ body {
 }
 
 #navbarNav {
-    background-color: #504343dd;
+    background-color: #433c3cdd;
     height: 88vh;
     position: fixed;
     width: 100%;
@@ -154,7 +154,7 @@ ul li:last-child {
 }
 
 .signup-col {
-    float: middle;
+    /*float: middle;*/
     /*margin-top: 3em;*/
     padding: 0;
     height: 500px;
@@ -211,11 +211,6 @@ ul li:last-child {
     margin-top: -15px;
 }
 
-{
-    margin-bottom: 1rem
-;
-}
-
 #login-row {
     margin-top: 3rem;
     padding: 1rem;
@@ -247,7 +242,7 @@ ul li:last-child {
     /*border-color: #343a40;*/
     border: none;
     color: #f8f9fa;
-    align: center;
+    /*align: center;*/
     font-size: 30px;
 }
 

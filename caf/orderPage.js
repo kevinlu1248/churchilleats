@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#exit-button").click(function () {
-        window.location.href = "../";
+        window.location = "/";
     });
 
     var foodsData = [];
@@ -56,7 +56,7 @@ $(document).ready(function () {
     };
 
     var updateOrders = function () {
-        $("caption").html("Refreshing...")
+        $("caption").html("Refreshing...");
         $.ajax({
             method: "GET",
             url: "../library/caf/getOrders.php",
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
                         if (foods.length == 1) {
                             var html = `<tr class="${orderID}">
-                                <td scope="row">
+                                <td>
                                     ${orderID}
                                     <span id="${orderID}" hidden>${JSON.stringify(order)}</span>
                                 </td>
@@ -118,7 +118,7 @@ $(document).ready(function () {
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>`
+                            </tr>`;
 
                             table.append(html);
                         } else {
@@ -152,7 +152,7 @@ $(document).ready(function () {
                                         <td>${food.qty}</td>
                                         <td>${monetize(food.cost)}</td>
                                         <td>${monetize(totalCost)}</td>
-                                    `
+                                    `;
 
                                     if (status == "serving") {
                                         html += `
@@ -265,7 +265,7 @@ $(document).ready(function () {
                             var reason = $("#rejectionReason-" + orderID).val();
                             $.ajax({
                                 method: "POST",
-                                url: "../library/caf/rejectOrder.php",
+                                url: "/library/caf/rejectOrder.php",
                                 data: {
                                     order: orderData,
                                     reason: reason
@@ -277,7 +277,6 @@ $(document).ready(function () {
                                 success: function (data) {
                                     console.log(data);
                                     if (data == "true") {
-
                                         $(".orderID").fadeOut("slow");
                                         toastr.success(`Order ${orderID} was rejected because: "${reason}"`, "Success");
                                     }
@@ -286,7 +285,7 @@ $(document).ready(function () {
                         } else if (action == "Delivering") {
                             $.ajax({
                                 method: "POST",
-                                url: "../library/caf/deliveringOrder.php",
+                                url: "/library/caf/deliveringOrder.php",
                                 data: {orderID: orderID},
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     console.log(errorThrown);
@@ -302,7 +301,7 @@ $(document).ready(function () {
                         } else if (action == "Yes") {
                             $.ajax({
                                 method: "POST",
-                                url: "../library/caf/doneOrder.php",
+                                url: "/library/caf/doneOrder.php",
                                 data: {order: orderData},
                                 error: function (jqXHR, textStatus, errorThrown) {
                                     console.log(errorThrown);
@@ -310,18 +309,17 @@ $(document).ready(function () {
                                     toastr.success(`Order ${orderID} finishing unsuccessful for the following reason: ${errorThrown}`, "Error");
                                 },
                                 success: function (data) {
+                                    // console.log(data)
                                     if (data == "true") {
                                         console.log("finishing order successful");
                                         toastr.success(`Order ${orderID} finished successful`, "Success");
                                     }
-                                    ;
                                 }
                             }).done(function () {
 
                                 // $("#done-modal-${orderID}").modal('hide');
                             });
                         }
-                        ;
                     });
 
                     $(".rejectionDefaults > button").unbind().click(function () {
@@ -336,13 +334,12 @@ $(document).ready(function () {
                         verifyRejectionReasoningButton($(this).attr("orderID"));
                     });
                 }
-                ;
             }
         })
             .done(function (data) {
                 $("caption").html("Last refreshed at " + new Date().toLocaleTimeString());
             });
-    }
+    };
 
     updateOrders();
 

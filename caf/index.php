@@ -19,6 +19,8 @@ if ($_GET["passwordIncorrect"] == "true") {
 }
 ?>
 
+<!--TODO: fix templating-->
+
 <div id="entry" class="container p-5 m-x-3 text-center d-flex align-items-center justify-content-center"
      style="padding-bottom: 200px !important;">
     <form class="d-flex justify-content-center" action="../library/caf/verifyPassword.php" method="POST">

@@ -26,7 +26,7 @@ $order_array = json_decode($order, true);
         <div class="form-group row mx-0">
             <div class="col-4" id="room-number-container">
                 <input id="room-number" type="number" class="location form-control" placeholder="3 Digits"
-                       pattern="^\d{3}$" name="room" autofocus="true">
+                       pattern="^\d{3}$" name="room" autofocus="true"/>
                 <div class="invalid-feedback">
                     Please enter a valid room number.
                 </div>
@@ -43,9 +43,9 @@ $order_array = json_decode($order, true);
         <input id="order" name="order" type="text" value='<?php echo $order; ?>' hidden>
         <input id="totalCost" name="totalCost" type="text" value='<?php echo $totalCost; ?>' hidden>
         <button id="submit-location" type="submit" class="btn btn-success fixed-bottom" disabled>
-            <h1 class="display-4 text-white">
-                Confirm
-            </h1>
+            <span class="display-4 text-white">
+                <i class="fas fa-check"></i>&nbsp;Confirm
+            </span>
         </button>
     </form>
 

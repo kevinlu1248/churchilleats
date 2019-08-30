@@ -41,6 +41,7 @@ class DoneOrder extends Query
         $this->deleteOrder();
 
         $this->success = !($this->insertDidSucceed && $this->deleteDidSucceed);
+//        var_dump($this->insertDidSucceed);
     }
 
     private function insertOrder()
