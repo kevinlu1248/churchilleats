@@ -20,3 +20,25 @@ tr {
 
 #frequency-btn {
 }
+
+/*#order-table tr {*/
+/*    background-color: transparent;*/
+/*}*/
+
+#order-table {
+    background-color: transparent;
+}
+
+#order-table tr, #order-table thead {
+    background-color: transparent;
+}
+
+#order-table td {
+    background-color: #23293099;
+    color: #bdb8ae;
+}
+
+#order-table thead th {
+    color: #f8f9fa;
+    background-color: #343a4099;
+}

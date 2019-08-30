@@ -94,5 +94,5 @@ $success = $doneOrder->success ? "true" : "false";
 // var_dump($session_order);
 // echo $success;
 
-header("Location: http://localhost:8888/churchilleats?doneSuccess=$success");
+header("Location: /?doneSuccess=$success");
 exit();

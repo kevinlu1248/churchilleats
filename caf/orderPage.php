@@ -40,9 +40,9 @@ add delivery button -->
 
 <div id="entry" class="container p-5 m-x-3 text-center align-items-center justify-content-center"
      style="padding-top: 0 !important; max-width: none;">
-    <table class="table table-dark table-borderless table-hover table-sm">
+    <table id="order-table" class="table table-dark table-borderless table-hover table-sm">
         <caption></caption>
-        <thead class="thead-light">
+        <thead>
         <tr>
             <th scope="col">Order #</th>
             <th scope="col">Name</th>

@@ -30,12 +30,11 @@ $(document).ready(function () {
                         $("#serving").attr("hidden", true);
                         $("#delivering").removeAttr("hidden");
                     } else if (data == "delivered" || !data) {
-                        window.location.href = "../../../library/orderingActions/orderDone.php";
+                        window.location.href = "/library/orderingActions/orderDone.php";
                     } else if (data == "rejected") {
-                        window.location.href = "../../../library/orderingActions/orderRejected.php";
+                        window.location.href = "/library/orderingActions/orderRejected.php";
                     }
                 }
-                // update status
                 current_status = data;
             }
         });

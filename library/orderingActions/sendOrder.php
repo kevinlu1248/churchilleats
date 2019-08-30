@@ -63,6 +63,7 @@ class Order extends Query
         $query = Query::insert($inputs, "orders", true);
         $this->didSucceed = $query->didSucceed;
         $this->orderID = (int)$query->lastInsertId;
+        var_dump($query);
 
         // updating users
 
@@ -100,7 +101,7 @@ $_SESSION["order"] = array(
     "orderTime" => $orderTime
 );
 
-// var_dump($_SESSION["order"]);
+var_dump($_SESSION["order"]);
 
 header("Location: /signedIn/order/tracking/?didSucceed=$didSucceed");
 exit();

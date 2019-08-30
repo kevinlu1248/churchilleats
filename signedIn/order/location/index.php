@@ -1,5 +1,5 @@
 <?php
-require_once '../../../includes/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <script>
@@ -86,5 +86,5 @@ $order_array = json_decode($order, true);
 <script src="location.js"></script>
 
 <?php
-require_once '../../../includes/footer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php';
 ?>

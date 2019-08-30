@@ -25,8 +25,9 @@ class GetOrderStatus extends Query
 }
 
 $orderID = $_SESSION["order"]["orderID"];
+//var_dump($_SESSION["order"]);
+//echo $orderID;
 
 $getOrderStatus = new GetOrderStatus($orderID);
+//var_dump($getOrderStatus);
 echo $getOrderStatus->status;
-// echo $orderID;
-// echo "test";

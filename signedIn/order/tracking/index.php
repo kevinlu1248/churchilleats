@@ -1,5 +1,5 @@
 <?php
-require_once '../../../includes/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <!--
@@ -14,7 +14,7 @@ Others:
 -->
 
 <script>
-    $("head").append('<link rel="stylesheet" type="text/css" href="tracking.css">')
+    $("head").append('<link rel="stylesheet" type="text/css" href="tracking.css">');
 </script>
 
 <?php
@@ -22,7 +22,7 @@ Others:
 $session_order = $_SESSION["order"];
 
 if (!$session_order) {
-    echo "<script>window.location.href = '../../../';</script>";
+    echo "<script>window.location.href = '/';</script>";
 }
 
 $order = $session_order["order"];
@@ -36,7 +36,7 @@ $orderID = sprintf("%05d", $orderID_); // adding zero fill
 
 <div id="entry" class="p-5 m-x-3">
     <div id="serving">
-        <h5>
+        <h5 class="text-light">
             Your order is now being served. Your order will be delivered shortly.
         </h5>
         <div id="unaccepted-spinner-container">
@@ -44,7 +44,7 @@ $orderID = sprintf("%05d", $orderID_); // adding zero fill
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <h5>
+        <h5 class="text-light">
             <span id="serving-timer">0</span> seconds since order was made.
         </h5>
         <div id="tracking-footer" class="fixed-bottom row no-gutters">
@@ -59,13 +59,13 @@ $orderID = sprintf("%05d", $orderID_); // adding zero fill
         </div>
     </div>
     <div id="delivering" hidden>
-        <h5>
+        <h5 class="text-white">
             Your order has been accepted. Your order number is
         </h5>
-        <h1 class="display-1 text-center" id="orderID">
+        <h1 class="display-1 text-center text-white" id="orderID">
             <?php echo $orderID; ?>
         </h1>
-        <h5>
+        <h5 class="text-white">
             Your order will arrive shortly. Please attentively wait your food and have your money ready.
         </h5>
         <div id="tracking-footer" class="fixed-bottom row no-gutters">
@@ -169,5 +169,5 @@ $orderID = sprintf("%05d", $orderID_); // adding zero fill
 <script src="tracking.js"></script>
 
 <?php
-require_once '../../../includes/footer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php';
 ?>

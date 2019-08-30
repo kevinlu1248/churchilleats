@@ -85,12 +85,12 @@ $(document).ready(function () {
                         // console.log(order);
 
                         if (foods.length == 1) {
-                            var html = `<tr class="table-active ${orderID}">
-                                <th scope="row">
+                            var html = `<tr class="${orderID}">
+                                <td scope="row">
                                     ${orderID}
                                     <span id="${orderID}" hidden>${JSON.stringify(order)}</span>
-                                </th>
-                                <th>${name}</th>
+                                </td>
+                                <td>${name}</td>
                                 <td>${location}</td>
                                 <td>${firstFood.name}</td>
                                 <td>${firstFood.qty}</td>
@@ -108,8 +108,8 @@ $(document).ready(function () {
                             html += `
                                 <td><button class="btn btn-danger" for="${orderID}" data-toggle="modal" data-target="#reject-modal-${orderID}">Reject</button></td>
                             </tr>
-                            <tr class="table-active ${orderID}">
-                                <th scope="row"></th>
+                            <tr class="${orderID}">
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -123,11 +123,11 @@ $(document).ready(function () {
                             table.append(html);
                         } else {
                             var html =
-                                `<tr class="table-active ${orderID}">
-                                <th scope="row">
+                                `<tr class="${orderID}">
+                                <td>
                                     ${orderID}
                                     <span id="${orderID}" hidden>${JSON.stringify(order)}</span>
-                                </th>
+                                </td>
                                 <th>${name}</th>
                                 <td>${location}</td>
                                 <td>${firstFood.name}</td>
@@ -144,8 +144,8 @@ $(document).ready(function () {
                                 if (index == foods.length - 1) {
                                     // last row of foods
                                     var html =
-                                        `<tr class="table-active last-row ${orderID}">
-                                        <th scope="row"> </th>
+                                        `<tr class="last-row ${orderID}">
+                                        <td> </td>
                                         <td></td>
                                         <td></td>
                                         <td>${food.name}</td>
@@ -166,7 +166,7 @@ $(document).ready(function () {
                                         <td><button class="btn btn-danger" for="${orderID}" data-toggle="modal" data-target="#reject-modal-${orderID}">Reject</button></td>
                                     </tr>
                                     <tr class="table-active ${orderID}">
-                                        <th scope="row"></th>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -180,7 +180,7 @@ $(document).ready(function () {
                                     // console.log(index);
                                     var html =
                                         `<tr class="table-active ${orderID}">
-                                        <th scope="row"></th>
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td>${food.name}</td>

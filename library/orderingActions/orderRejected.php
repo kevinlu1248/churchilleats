@@ -33,5 +33,5 @@ $reason = urlencode($orderRejected->reason);
 // unset($_SESSION["order"]);
 // echo $reason;
 
-header("Location: http://localhost:8888/churchilleats/?orderRejected=true&reason=$reason");
+header("Location: /?orderRejected=true&reason=$reason");
 exit();
