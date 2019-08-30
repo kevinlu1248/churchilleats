@@ -15,21 +15,18 @@ $order_array = json_decode($order, true);
 ?>
 
 <div id="entry" class="p-5 m-x-3">
-    <form id="location" class="form needs-validation" action="../../../library/orderingActions/sendOrder.php"
+    <form id="location" class="form needs-validation" action="/library/orderingActions/sendOrder.php"
           method="POST" novalidate>
-        <div class="form-group row">
-            <label for=".location">
-                Please enter your room number or briefly describe your location and tap "Confirm" below.
-            </label>
-            <label class="text-muted">
-                Please note that if the description is too vague the order may be rejected.
-            </label>
+        <label for=".location" class="text-light">
+            Please enter your room number or briefly describe your location and tap "Confirm" below.
+        </label>
+        <label class="text-muted">
+            Please note that if the description is too vague the order may be rejected.
+        </label>
+        <div class="form-group row mx-0">
             <div class="col-4" id="room-number-container">
-                <input id="room-number" type="number" class="location form-control" placeholder="3-Digit #"
+                <input id="room-number" type="number" class="location form-control" placeholder="3 Digits"
                        pattern="^\d{3}$" name="room" autofocus="true">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
                 <div class="invalid-feedback">
                     Please enter a valid room number.
                 </div>
@@ -37,9 +34,6 @@ $order_array = json_decode($order, true);
             <div class="col-8" id="described-location-container">
                 <input id="described-location" type="text" class="location form-control"
                        placeholder="Or Brief Description of Location" name="description">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
                 <div class="invalid-feedback">
                     Please enter a valid description.
                 </div>
@@ -56,7 +50,7 @@ $order_array = json_decode($order, true);
     </form>
 
     <table class="table" id="order-table">
-        <thead id="order-table-head" class="thead-light">
+        <thead id="order-table-head" class="thead-dark">
         <tr>
             <th scope="col">Item</th>
             <th scope="col">Cost</th>
@@ -80,7 +74,7 @@ $order_array = json_decode($order, true);
         }
         ?>
         <tr id="last-row">
-            <th scope='row'>Total</th>
+            <td scope='row'>Total</td>
             <td></td>
             <td></td>
             <td><strong>$<?php echo $totalCost; ?></strong></td>

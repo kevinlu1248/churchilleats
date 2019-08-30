@@ -88,7 +88,7 @@ $(document).ready(function () {
             var cardTemplate = `
                     <div id="${id}-card" class="row food-item mx-0 px-3">
                         <div class="col-2 d-flex px-0 overflow-auto">
-                            <img src="${image}" alt="" class="food-image" align="middle">
+                            <img src="${image}" alt="" class="food-image" align="middle" imageOf="${name}">
                         </div>
                         <div class="col-6 text-left d-flex pr-0 pl-3">
                             <div class="align-self-center food-name">
@@ -98,7 +98,7 @@ $(document).ready(function () {
                         </div>
                         <div class="col-4 d-flex px-0 justify-content-between">
 <!--                                <div class="align-self-center mr-1">&times;</div>-->
-                            <div id="${id}-hider" class="hider justify-content-between flex-2 mr-2 animated" style="display: none;">
+                            <div id="${id}-hider" class="hider justify-content-between flex-2 mr-2" style="display: none;">
                                 <div class="display-4 quantity d-flex">
                                      <div class="d-flex align-self-center">
                                          <div id="${id}-counter" type="number" class="counter" cost="${cost}" ${max}>0</div>
@@ -114,7 +114,6 @@ $(document).ready(function () {
                         </div>
                     </div>
                 `;
-            console.log(cardTemplate)
 
 
             $(cardTemplate).insertBefore("#instructions-unhider-container");
@@ -129,38 +128,6 @@ $(document).ready(function () {
         `);
         })
         .done(function () {
-            // adding images
-            // $("img").each(function () {
-            //     // console.log($(this).attr("src"));
-            //     if (!$(this).attr("src")) {
-            //         var imageOf = $(this).attr("imageOf");
-            //         var imageID = $(this).attr("id");
-            //         // console.log(imageOf.toLowerCase());
-            //
-            //         //get image ajax call
-            //         var pixabayAPI = "https://pixabay.com/api/";
-            //
-            //         $.ajax(pixabayAPI, {
-            //             method: "GET",
-            //             dataType: "json",
-            //             data: {
-            //                 key: "12385886-e50ba07b2c9bf55ce5c73dae2",
-            //                 q: imageOf.toLowerCase(),
-            //                 category: "food"
-            //             },
-            //             success: function (result, status, jqXHR) {
-            //                 var images = result.hits;
-            //                 if (images.length > 0) {
-            //                     $("#" + imageID).attr("src", images[0].webformatURL);
-            //                 }
-            //                 ;
-            //             },
-            //             error: function (e) {
-            //                 console.log(e);
-            //             }
-            //         });
-            //     }
-            // });
 
             // set event handler for button presses
             $(".counter-buttons").click(function () {
@@ -189,14 +156,13 @@ $(document).ready(function () {
                 const maxCount = targetCounter.attr("max");
 
 
-                if (targetCounter.html() <= 0 && !doAdd) {
+                if (value <= 0 && !doAdd) {
                     // slide out
-                    console.log('leaving');
-                    $(`#${targetFood}-hider`).fadeOut('fast');
+                    $(`#${targetFood}-hider`).fadeOut(100);
                 }
                 if (targetCounter.html() == 1 && doAdd) {
                     // slide in
-                    $(`#${targetFood}-hider`).fadeIn('fast');
+                    $(`#${targetFood}-hider`).fadeIn(100);
 
                 }
 
@@ -206,7 +172,7 @@ $(document).ready(function () {
                     subtractButton.attr("disabled", true);
                 } else {
                     //activates subtract button
-                    $(`#${targetFood}-hider`).animate({width: "toggle"}, 350);
+                    // $(`#${targetFood}-hider`).animate({width: "toggle"}, 350);
                     subtractButton.attr("disabled", false);
                 }
 
@@ -229,9 +195,9 @@ $(document).ready(function () {
                     const cost = parseFloat($("#" + id + "-counter").attr("cost"));
                     var count = parseInt($("#" + id + "-counter").html());
                     totalCost += cost * count;
-                    // console.log(cost);
+                    console.log(count);
 
-                    if (cost) {
+                    if (count != "0") {
                         var count = $("#" + id + "-counter").html();
                         var foodObject = {
                             "id": id,
@@ -255,6 +221,40 @@ $(document).ready(function () {
                 } else {
                     // $("#ordering-footer").attr("hidden", "");
                     $("#ordering-footer").slideUp("fast");
+                }
+            });
+            // adding images
+            $("img").each(function () {
+                if (!$(this).attr("src")) {
+                    var imageOf = $(this).attr("imageOf");
+                    var imageID = $(this).attr("id");
+                    // console.log(imageOf.toLowerCase());
+
+                    //get image ajax call
+                    var pixabayAPI = "https://pixabay.com/api/";
+
+                    $.ajax(pixabayAPI, {
+                        method: "GET",
+                        dataType: "json",
+                        async: false,
+                        data: {
+                            key: "12385886-e50ba07b2c9bf55ce5c73dae2",
+                            q: imageOf.toLowerCase(),
+                            category: "food"
+                        },
+                        imageID: imageID,
+                        success: function (result) {
+                            var images = result.hits;
+                            if (images.length > 0) {
+                                console.log(imageID);
+                                $("#" + imageID).attr("src", images[0].webformatURL);
+                                // console.log(images[0].webformatURL)
+                            }
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
                 }
             });
             $("#ordering-footer").click(function () {

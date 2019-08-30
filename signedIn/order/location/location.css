@@ -8,22 +8,38 @@
 
 #submit-location {
     width: 100%;
+    height: 12vh;
 }
 
 #order-table {
-    background-color: white;
-    border-color: black;
+    border-color: #333333;
     border-radius: 5%;
+    color: #f8f9fa;
+    overflow: hidden;
 }
 
-#order-table * {
-    border-color: grey;
+#order-table tr {
+    background-color: #504343dd;
 }
 
-#order-table-head {
-    border-radius: 50%;
+#order-table thead tr {
+    background-color: #302525dd;
+    /*border-radius: 50%;*/
 }
+
+#order-table th {
+    background-color: transparent;
+}
+
+#order-table td, #order-table th {
+    border-color: #333;
+}
+
+/*#order-table * {*/
+/*    border-color: grey;*/
+/*}*/
 
 #last-row {
     border-top-width: thick;
+    border-color: #333333;
 }

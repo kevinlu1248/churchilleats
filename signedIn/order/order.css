@@ -101,7 +101,7 @@
 /*}*/
 
 #ordering-footer {
-    height: 8vh;
+    height: 12vh;
     box-shadow: 0 -1px 10px black;
     /* color: none; */
     background-color: #504343dd;
@@ -116,18 +116,19 @@
     height: 100%;
 }
 
-#ordering-button-container {
-    height: 100%;
-    width: 100%
-}
-
 #order-now-button {
     background-color: transparent;
     border: none;
     align-self: center;
     vertical-align: center;
     height: 100%;
+    width: 100%;
+    padding: auto;
     color: #f8f9fa;
+}
+
+#order-now-button:hover, #order-now-button:active {
+    background-color: #302525dd;
 }
 
 #food-cards-container {

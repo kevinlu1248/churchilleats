@@ -250,3 +250,13 @@ ul li:last-child {
     align: center;
     font-size: 30px;
 }
+
+input, .form-control, .form-control:focus {
+    border-color: #bdb8ae;
+    color: #f8f9fa;
+    background-color: transparent;
+}
+
+.input-group-text {
+    color: #333;
+}

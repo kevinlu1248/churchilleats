@@ -101,7 +101,7 @@
     <form id="ordering-form" action="signedIn/order/location/index.php" method="POST"
           class="d-flex justify-content-center">
         <input type="text" id="order" name="order" hidden>
-        <button id="order-now-button" type="submit" class="align-middle align-self-center text-center">
+        <button id="order-now-button" type="submit" class="align-middle align-self-center text-center display-4">
             <i class="fas fa-shopping-cart"></i>&nbsp;Checkout
         </button>
 

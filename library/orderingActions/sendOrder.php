@@ -102,7 +102,7 @@ $_SESSION["order"] = array(
 
 // var_dump($_SESSION["order"]);
 
-header("Location: /churchilleats/signedIn/order/tracking/?didSucceed=$didSucceed");
+header("Location: /signedIn/order/tracking/?didSucceed=$didSucceed");
 exit();
 
 // var_dump($order);

@@ -3,11 +3,11 @@ $(document).ready(function () {
     // console.log(current_status);
 
     $("#cancel-order").click(function () {
-        window.location.href = "../../../library/orderingActions/cancelOrder.php";
+        window.location.href = "/library/orderingActions/cancelOrder.php";
     });
 
     $("#done-order").click(function () {
-        window.location.href = "../../../library/orderingActions/doneOrder.php";
+        window.location.href = "/library/orderingActions/doneOrder.php";
     });
 
     setInterval(function () {
@@ -18,7 +18,7 @@ $(document).ready(function () {
     var getOrderingStatus = function () {
         $.ajax({
             method: "GET",
-            url: "../../../library/orderingActions/getStatus.php",
+            url: "/library/orderingActions/getStatus.php",
             dataType: "text",
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(errorThrown);
