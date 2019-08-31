@@ -95,14 +95,16 @@ $(document).ready(function () {
                                 <td>${firstFood.name}</td>
                                 <td>${firstFood.qty}</td>
                                 <td>${monetize(firstFood.cost)}</td>
-                                <td>${totalCost}</td>`;
+                                <td>${totalCost}</td>
+                            `;
 
                             if (status == "serving") {
                                 html += `
                                 <td><button class="btn btn-primary actionBtn" for="${orderID}">Delivering</button></td>`;
                             } else if (status == "delivering") {
                                 html += `
-                                <td><button class="btn btn-success" for="${orderID}" data-toggle="modal" data-target="#done-modal-${orderID}">Done</button></td>`;
+                                <td><button class="btn btn-success" for="${orderID}" data-toggle="modal" data-target="#done-modal-${orderID}">Done</button></td>
+                                `;
                             }
 
                             html += `
@@ -118,7 +120,8 @@ $(document).ready(function () {
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>`;
+                            </tr>
+                            `;
 
                             table.append(html);
                         } else {

@@ -39,8 +39,8 @@ $(document).ready(function () {
         }
 
         var description = $("#described-location").val();
-        console.log(description);
-        console.log(Boolean(description));
+        // console.log(description);
+        // console.log(Boolean(description));
         if (description) {
             $("#room-number").removeClass("is-invalid");
             $("#room-number").addClass("is-valid");

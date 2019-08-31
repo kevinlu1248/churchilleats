@@ -56,28 +56,7 @@ add delivery button -->
         </tr>
         </thead>
         <tbody id="tableBody" statuses="0">
-        <!-- <tr class="table-active">
-            <th scope="row">75</th>
-            <th>Kevin Lu</th>
-            <td>Room 123</td>
-            <td>Hot Dog</td>
-            <td>2</td>
-            <td>$5.00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <th scope="row"></th>
-            <td></td>
-            <td></td>
-            <td>Burger</td>
-            <td>idk</td>
-            <td>idk</td>
-            <td>$5.00</td>
-            <td><button class="btn btn-success">Delivering</button></td>
-            <td><button class="btn btn-danger">Reject</button></td>
-        </tr> -->
+        <!-- placeholder for next row-->
         </tbody>
     </table>
 </div>

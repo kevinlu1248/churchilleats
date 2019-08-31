@@ -46,45 +46,6 @@ $(document).ready(function () {
                 image = `assets/foods/${food["image"]}`;
             }
 
-            // var cardTemplate = `
-            // <div class="card" id="${id}-card">
-            //     <div class="card-header" id="${id}-headers">
-            //         <button class="btn btn-outline-dark collapsable" type="button" data-toggle="collapse" data-target="#${id}-body" aria-expanded="false" aria-controls="${id}-body">
-            //             <div class="row">
-            //                 <div class="col-6 text-left">
-            //                     ${name}
-            //                 </div>
-            //                 <div class="col-6 text-right">
-            //                     $${cost} &times
-            //                     <input id="${id}-counter" type="number" class="counter" value="0" cost="${cost}" ${max} readonly>
-            //                 </div>
-            //             </div>
-            //         </button>
-            //     </div>
-            //     <div id="${id}-body" class="collapse" aria-labelledby="${id}-headers" data-parent="#food-cards-container">
-            //         <div class="row no-gutters">
-            //             <div class="col-4">
-            //                 <img id="${id}-image" src="${image}" class="card-img food-card-image" alt="Image not found." imageOf="${name}">
-            //             </div>
-            //             <div class="col-4">
-            //                 <div id="${id}-cost" class="card-body align-middle text-center">
-            //                     0.00
-            //                 </div>
-            //             </div>
-            //             <div class="col-4 food-counter-buttons">
-            //                 <button type="button" class="btn btn-outline-secondary counter-buttons plus" name="plus" for="${id}" id="${id}-plus">
-            //                     <i class="fa fa-plus"></i>
-            //                 </button>
-            //                 <button type="button" class="btn btn-outline-secondary counter-buttons minus" name="minus" for="${id}" id="${id}-minus" disabled>
-            //                     <i class="fa fa-minus"></i>
-            //                 </button>
-            //                 <p id="${id}-max-warning" class="text-danger max-food-warning" hidden>You have the reached the maximum amount of purchasable food.</p>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
-            // `; // from cardTemplate.html
-
             var cardTemplate = `
                     <div id="${id}-card" class="row food-item mx-0 px-3">
                         <div class="col-2 d-flex px-0 overflow-auto">
@@ -97,7 +58,6 @@ $(document).ready(function () {
                             </div>
                         </div>
                         <div class="col-4 d-flex px-0 justify-content-between">
-<!--                                <div class="align-self-center mr-1">&times;</div>-->
                             <div id="${id}-hider" class="hider justify-content-between flex-2 mr-2" style="display: none;">
                                 <div class="display-4 quantity d-flex">
                                      <div class="d-flex align-self-center">
