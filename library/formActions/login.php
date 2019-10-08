@@ -4,8 +4,7 @@ include_once "sessioner.php";
 
 //TODO: autologin
 
-class Login extends Query
-{
+class Login extends Query {
     // user inputted password
     private $password;
     private $userInput;
@@ -14,8 +13,7 @@ class Login extends Query
     private $didUseStudentID;
     public $passwordIsCorrect;
 
-    public function __construct(string $userInput, string $password, string $fingerprint)
-    {
+    public function __construct(string $userInput, string $password, string $fingerprint) {
         if (!($userInput && $password && $fingerprint)) {
             $passwordIsCorrect = false;
             return 0;
@@ -34,34 +32,31 @@ class Login extends Query
         }
     }
 
-    private function connectUser()
-    {
+    private function connectUser() {
         //get user with this email
         if ($this->didUseStudentID) {
             $user = Query::getUser($this->userInput, "studentID")->result->fetch(PDO::FETCH_ASSOC);
-        } else {
+        }
+        else {
             $user = Query::getUser($this->userInput, "email")->result->fetch(PDO::FETCH_ASSOC);
         }
         return $user;
     }
 
-    private function verify()
-    {
+    private function verify() {
         //actual password
         $hash = $this->user['password'];
         return password_verify($this->password, $hash);
     }
 
-    private function sessionize()
-    {
+    private function sessionize() {
         $sessioner = new Sessioner($this->user);
         // var_dump($this->user);
         $sessioner->session();
         // var_dump($_SESSION["user"],);
     }
 
-    private function setAutoLogin()
-    {
+    private function setAutoLogin() {
         # updates fingerprint
         $fingerprintString = $this->user["fingerprint"] . " " . $this->fingerprint;
         $columns = array("fingerprint" => $fingerprintString);
@@ -88,15 +83,16 @@ $password = $_POST['pwd'];
 $login = new Login($userInput, $password, $fingerprint);
 $passwordIsCorrect = ($login->passwordIsCorrect) ? 'true' : 'false';
 // echo "$URL?passwordIsCorrect=$passwordIsCorrect";
-// var_dump($login);
+//var_dump($login);
 // echo $userInput;
 
 // echo var_dump($_COOKIE["email"]);
 
-// var_dump($_SESSION["user"]);
+//var_dump($_SESSION["user"]);
 if ($passwordIsCorrect) {
     header("Location: /");
-} else {
+}
+else {
     header("Location: /login?passwordIsCorrect=$passwordIsCorrect");
 }
 exit();

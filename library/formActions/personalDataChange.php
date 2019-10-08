@@ -2,8 +2,7 @@
 require_once "../conn/query.php";
 session_start();
 
-class dataChange extends Query
-{
+class DataChange extends Query {
     private $uid;
     private $newFirst;
     private $newLast;
@@ -12,8 +11,7 @@ class dataChange extends Query
     public $passwordIsCorrect;
     public $didSucceed;
 
-    public function __construct(string $uid, string $newFirst, string $newLast, string $newStudentId, string $password)
-    {
+    public function __construct(string $uid, string $newFirst, string $newLast, string $newStudentId, string $password) {
         $this->uid = $uid;
         $this->newFirst = $newFirst;
         $this->newLast = $newLast;
@@ -24,10 +22,7 @@ class dataChange extends Query
         $this->passwordIsCorrect = password_verify($this->password, $hash);
 
         if ($this->passwordIsCorrect) {
-            $changes = array(
-                'firstName' => $this->newFirst,
-                'lastName' => $this->newLast,
-                'studentID' => $this->newStudentId);
+            $changes = array('firstName' => $this->newFirst, 'lastName' => $this->newLast, 'studentID' => $this->newStudentId);
             $conditions = array('ID' => $this->uid);
             $query = Query::update("users", $changes, $conditions, 1);
             $this->didSucceed = $query->didSucceed;
@@ -37,16 +32,17 @@ class dataChange extends Query
 }
 
 $uid = $_SESSION["user"]["ID"];
-$name = $_POST["name"]
-[$newFirst, $newLast] = explode(" ", $name)
+$name = $_POST["name"];
+[$newFirst, $newLast] = explode(" ", $name);
 $newStudentId = $_POST["studentId"];
 $password = $_POST["password"];
 
-$dataChange = new dataChange($uid, $newFirst, $newLast, $newStudentId, $password);
+$dataChange = new DataChange($uid, $newFirst, $newLast, $newStudentId, $password);
 $passwordIsCorrect = ($dataChange->passwordIsCorrect) ? 'true' : 'false';
 $didSucceed = ($dataChange->didSucceed) ? 'true' : 'false';
-// var_dump($dataChange);
-// echo $didSucceed;
+//var_dump($dataChange);
+echo $didSucceed;
+echo 'test';
 
-header("Location: $URL/?updatePasswordIsCorrect=$passwordIsCorrect&updateSuccess=$didSucceed");
+//header("Location: $URL/?updatePasswordIsCorrect=$passwordIsCorrect&updateSuccess=$didSucceed");
 exit();

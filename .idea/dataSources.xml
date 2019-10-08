@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - churchilleats@localhost" single-connection="true" uuid="8970898e-4a04-446c-bfd2-48084b11b48f">
+    <data-source source="LOCAL" name="SSH Tunnel to Server" single-connection="true" uuid="8970898e-4a04-446c-bfd2-48084b11b48f">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/churchilleats</jdbc-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://104.248.188.163:3306/churchilleats</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
@@ -16,18 +16,33 @@
         <property name="serverTimezone" value="America/Vancouver" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="churchilleats@localhost" uuid="ea7c5ea2-6990-499b-8831-8a374410d14d">
+    <data-source source="LOCAL" name="TCP MYSQL" uuid="ea7c5ea2-6990-499b-8831-8a374410d14d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <remarks>Server Based</remarks>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/churchilleats</jdbc-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://104.248.188.163:3306/churchilleats</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="Local System" uuid="129786bf-b984-4b85-a8e5-1697c3ce024a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+        <property name="serverTimezone" value="America/Vancouver" />
       </driver-properties>
     </data-source>
   </component>

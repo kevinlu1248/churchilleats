@@ -1,8 +1,7 @@
 <?php
 
 //Database connection
-class Dbh
-{
+class Dbh {
     private $servername;
     private $username;
     private $password;
@@ -10,19 +9,24 @@ class Dbh
     private $charset;
     private $dsn;
 
-    protected function connect()
-    {
-        // $this->servername = "db763042919.hosting-data.io";
-        // $this->username = "dbo763042919";
-        // $this->password = "qwrrty24";
-        // $this->dbname = "db763042919";
-        // $this->charset = "utf8";
-
-        $this->username = 'root';
-        $this->password = 'root';
-        $this->dbname = 'churchilleats';
-        $this->servername = 'localhost';
+    protected function connect() {
+        $this->servername = "104.248.188.163";
+        $this->username = "kevin";
+        $this->password = "qwrrty24";
+        $this->dbname = "churchilleats";
         $this->charset = "utf8";
+        
+        //        $this->servername = "db763042919.hosting-data.io";
+        //        $this->username = "dbo763042919";
+        //        $this->password = "qwrrty24";
+        //        $this->dbname = "db763042919";
+        //        $this->charset = "utf8";
+
+        //        $this->username = 'root';
+        //        $this->password = 'root';
+        //        $this->dbname = 'churchilleats';
+        //        $this->servername = 'localhost';
+        //        $this->charset = "utf8";
 
         try {
             $this->dsn = "mysql:host=" . $this->servername . ";dbname=" . $this->dbname . ";charset=" . $this->charset . ";";
