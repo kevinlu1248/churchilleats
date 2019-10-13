@@ -30,7 +30,7 @@ if (!$user) {
                 <h3>
                     Personal Data Change
                 </h3>
-                <form id="personalDataChange" action="../../library/formActions/personalDataChange.php" method="POST">
+                <form id="personalDataChange" action="/library/formActions/personalDataChange.php" method="POST">
                     <!-- <form id="signup" class="container text-center" action="../library/formActions/signup.php" method="POST"> -->
                     <div class="form-group">
                         <input type="text" placeholder="First and last name" class="form-control input-box" id="name"
@@ -61,6 +61,7 @@ if (!$user) {
                 <h3>
                     Password Change
                 </h3>
+                <!--                TODO: add a form for this-->
                 <form id="changePassword">
                     <div class="form-group" action="../library/formActions/passwordChange.php" method="POST">
                         <input type="password" placeholder="Current Password" class="form-control input-box"

@@ -15,7 +15,7 @@ class Dbh {
         $this->password = "qwrrty24";
         $this->dbname = "churchilleats";
         $this->charset = "utf8";
-        
+
         //        $this->servername = "db763042919.hosting-data.io";
         //        $this->username = "dbo763042919";
         //        $this->password = "qwrrty24";
@@ -39,4 +39,4 @@ class Dbh {
     }
 }
 
-$URL = "localhost";
+$URL = "skiptheline.digital";

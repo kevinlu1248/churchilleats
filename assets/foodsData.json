@@ -1,35 +1,11 @@
 {
   "foods": [
     {
-      "id": "hotdog",
-      "name": "Hot Dog",
-      "cost": 3.00,
+      "id": "special",
+      "name": "?",
+      "cost": 6.00,
       "max": 5,
       "image": "hotdog.jpg"
-    },
-    {
-      "id": "chocolateBar",
-      "name": "Chocolate Bar",
-      "cost": 2.00,
-      "max": 10,
-      "image": "chocolateBar.png"
-    },
-    {
-      "id": "chips",
-      "name": "Chips",
-      "cost": 0.50
-    },
-    {
-      "id": "curryChicken",
-      "name": "Curry Chicken",
-      "cost": 5.75,
-      "max": 1
-    },
-    {
-      "id": "sandwich",
-      "name": "Sandwich",
-      "cost": 4.00,
-      "max": 2
     }
   ]
 }

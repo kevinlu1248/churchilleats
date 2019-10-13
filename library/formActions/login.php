@@ -85,10 +85,11 @@ $passwordIsCorrect = ($login->passwordIsCorrect) ? 'true' : 'false';
 // echo "$URL?passwordIsCorrect=$passwordIsCorrect";
 //var_dump($login);
 // echo $userInput;
-
 // echo var_dump($_COOKIE["email"]);
 
 //var_dump($_SESSION["user"]);
+
+//var_dump($login);
 if ($passwordIsCorrect) {
     header("Location: /");
 }

@@ -28,8 +28,9 @@ $(document).ready(function () {
     };
 
     //getting local json file for foods
-    $.getJSON("assets/foodsData.json", function (data) {
+    $.getJSON("/assets/foodsData.json", function (data) {
         foods = data["foods"];
+        console.log(foods);
         $("#food-spinner-container").remove();
         foods.forEach(function (food) {
             var id = food["id"];
@@ -83,7 +84,7 @@ $(document).ready(function () {
         .fail(function () {
             $("#food-cards-container").html(`
             <p class="text-danger">
-                An error has occured. Please refresh the page or contact and an administrator.
+                An error has occured. Please refresh the page or contact an administrator.
             </p>
         `);
         })

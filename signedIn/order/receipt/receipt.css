@@ -1,0 +1,45 @@
+#room-number-container {
+    padding-left: 0;
+}
+
+#described-location-container {
+    padding: 0;
+}
+
+#submit-location {
+    width: 100%;
+    height: 12vh;
+}
+
+#order-table {
+    border-color: #333333;
+    border-radius: 5%;
+    color: #f8f9fa;
+    overflow: hidden;
+}
+
+#order-table tr {
+    background-color: #433c3cdd;
+}
+
+#order-table thead tr {
+    background-color: #322b2bdd;
+    /*border-radius: 50%;*/
+}
+
+#order-table th {
+    background-color: transparent;
+}
+
+#order-table td, #order-table th {
+    border-color: #333;
+}
+
+/*#order-table * {*/
+/*    border-color: grey;*/
+/*}*/
+
+#last-row {
+    border-top-width: thick;
+    border-color: #333333;
+}

@@ -13,9 +13,11 @@ require_once 'includes/header.php';
 <div id="entry" class="container p-5 m-x-3">
     <div class="row">
         <?php
+        //        echo $_GET['updatePasswordIsCorrect'];
         if ($user) {
             require_once "signedIn/order/index.php";
-        } else {
+        }
+        else {
             require_once "notSignedIn/notSignedIn.php";
         }
         ?>

@@ -41,8 +41,7 @@ $dataChange = new DataChange($uid, $newFirst, $newLast, $newStudentId, $password
 $passwordIsCorrect = ($dataChange->passwordIsCorrect) ? 'true' : 'false';
 $didSucceed = ($dataChange->didSucceed) ? 'true' : 'false';
 //var_dump($dataChange);
-echo $didSucceed;
-echo 'test';
+//echo $didSucceed;
 
-//header("Location: $URL/?updatePasswordIsCorrect=$passwordIsCorrect&updateSuccess=$didSucceed");
+header("Location: /?updatePasswordIsCorrect=$passwordIsCorrect&updateSuccess=$didSucceed");
 exit();

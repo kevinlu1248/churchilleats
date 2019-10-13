@@ -59,14 +59,14 @@
         </div>
     </div>
     <div id="instructions-unhider-container">
-        <small class="text-muted">Confused about how to order? Load the instructions
+        <small class="text-muted">Need help ordering? Load the instructions
             <a id="instructions-unhider">here</a>.</small>
     </div>
 </div>
 
 <!-- footer for ordering -->
 <footer id="ordering-footer" class="fixed-bottom text-black" role="alert" style="display: none;">
-    <form id="ordering-form" action="signedIn/order/location/index.php" method="POST"
+    <form id="ordering-form" action="signedIn/order/receipt/index.php" method="POST"
           class="d-flex justify-content-center">
         <input type="text" id="order" name="order" hidden>
         <button id="order-now-button" type="submit" class="align-middle align-self-center text-center display-4">

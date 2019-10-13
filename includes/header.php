@@ -87,7 +87,8 @@ session_start();
         if ($logout == "true" || $user == NULL || $passwordIsCorrect == "false") {
             // require_once __DIR__."userDisplay/form.php";
             require_once "userDisplay/form.php";
-        } else {
+        }
+        else {
             require_once "userDisplay/user.php";
         }
         ?>
@@ -126,8 +127,7 @@ session_start();
 
     <?php
 
-    function alert(string $s, string $type)
-    {
+    function alert(string $s, string $type) {
         echo "<div class=\"alert alert-$type alert-dismissible fade show\" role=\"alert\">
             $s
             <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
@@ -137,44 +137,34 @@ session_start();
         ";
     }
 
-    ;
-
-    function danger(string $s)
-    {
+    function danger(string $s) {
         alert($s, "danger");
     }
 
-    ;
-    function warning(string $s)
-    {
+    function warning(string $s) {
         alert($s, "warning");
     }
 
-    ;
-    function success(string $s)
-    {
+    function success(string $s) {
         alert($s, "success");
     }
 
-    ;
 
     if ($_GET["signup"] === "success") {
-        include_once "banners/signupSuccess.php";
+        success('You have been registered. Please login above.');
     }
 
     if (($_GET["passwordIsCorrect"] == "false" && !$user) || $_GET["updatePasswordIsCorrect"] == "false") {
-        require_once "../banners/loginFailure.php";
+        warning('Your username or password is incorrect.');
         unset($_GET["passwordIsCorrect"]);
         unset($_GET["updatePasswordIsCorrect"]);
     }
 
-    if ($_GET["updateSuccess"] == "true") {
-        // echo "test";
-        require_once "../banners/updateSuccess.php";
-    } else if ($_GET["updatePasswordIsCorrect"] == "true") {
-        require_once "banners/updateSuccess.php";
-    } else if ($_GET["updateSuccess"] == "false" && $_GET["updatePasswordIsCorrect"] == "false") {
-        require_once "banners/loginFailure.php";
+    if ($_GET["updateSuccess"] == "true" || $_GET["updatePasswordIsCorrect"] == "true") {
+        success(' Update completed successfully.');
+    }
+    else if ($_GET["updateSuccess"] == "false" && $_GET["updatePasswordIsCorrect"] == "false") {
+        warning('Your username or password is incorrect.');
     }
 
     if ($user && $_GET["doWelcome"]) {
@@ -182,18 +172,20 @@ session_start();
     }
 
     if ($_GET["doneSuccess"] == "true") {
-        require_once "banners/doneSuccess.php";
+        //        require_once "banners/doneSuccess.php";
+        success('You have completed your order.');
     }
 
     if ($_GET["orderRejected"] == "true") {
-        require_once "banners/orderRejected.php";
+        danger('Your order was rejected for the following reason:');
         unset($_SESSION["order"]);
     }
 
-    // if ($_GET["signup"] == "duplicateerror") {
-    //     echo "test";
-    //     require_once "../banners/duplicateError.php";
-    // }
+    if ($_GET["signup"] == "duplicateerror") {
+        //        require_once "../banners/duplicateError.php";
+        warning('Your email or student ID is already in the system.');
+    }
+
     if ($_GET["signup"] == "differentPasswords") {
         warning("Your passwords are different.");
     }
